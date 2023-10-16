@@ -1,0 +1,4 @@
+name: Folder README
+description: >
+   Template for adding README files to folders.
+create_dir: FALSE

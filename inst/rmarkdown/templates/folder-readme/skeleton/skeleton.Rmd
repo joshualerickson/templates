@@ -1,0 +1,36 @@
+---
+params:
+  author:
+    label: "Author: "
+    value: ""
+    input: text
+  title:
+    label: "Title: "
+    value: "R1 - Soils, Water, and Fisheries Project README"
+    input: text
+output: 
+  html_document:
+    css: 'cayman.css'
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(dev.args = list(png = list(type = "cairo")))
+```
+<p id="logo"><img src="www/images/usda_usfs.png"></p>  
+<span style="color:#005838">Northern Region | Renewable Resource Management</span>
+
+# `r params$title`  
+##### by `r params$author`  
+
+### Overview    
+
+The purpose of the folder structure will be described below. Within each of the folders there will likely be more `README.html` files describing the structure, data, etc. This is just a quick and dirty way to provide a description of how we are using these locations so others can follow.  
+
+Thank you.
+
+### Archive  
+
+The archive folder contains 'fleeting' data or data that doesn't have a home. This data is likely not relevant anymore but most importantly is likely not documented. Considered the files within this folder _deprecated_. It is continuously being recycled so don't rely on any of the data in here.
+
+### Projects  
+
+The `Projects` folder will contain the projects that are currently being worked on or have already been worked on. The file name of the projects follows a pattern where everything before the suffix will be the project name and the suffix will be the year it was created, e.g. `some_project_2023`.  

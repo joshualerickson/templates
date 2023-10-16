@@ -1,0 +1,49 @@
+---
+params:
+  title:
+    label: 'Title: '
+    value: "Some Project"
+    input: text
+  author:
+    label: 'Author: '
+    value: ''
+    input: text
+output:
+  word_document:
+    reference_docx: "skeleton_template.docx"
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(dev.args = list(png = list(type = "cairo")))
+```
+
+
+
+# `r params$title`  
+##### by `r params$author`  
+
+
+## Findings  
+
+* We can model the error associated with both specific area road and background erosion rates to help us get a posterior predictive (PP) distribution for the sediment indicator rating.  
+
+* Overall, as specific area road erosion rates increase, the proportion compared to background also increases. However, these changes to the predictors and response depend on geologic parent material, e.g. granitic vs sedimentary. The model was able to account for this structure by incorporating geology as a predictor variable.  
+
+* By adding weak and uninformative priors to the model parameters we were able to limit any potential overfitting that might occurr due to the data generated process.      
+
+## Discussion  
+
+* Due to the uncertainty in the inherent GRAIP-Lite model and short-term background erosion rates, we needed to incorporate _uncertainty_ into the final rating and to do this we used Bayesian methods to capture a probability distribution of ratings per bull trout baseline (BTB) demarcation.  
+
+* Further exploration into Belt Supergroup background erosion rates is warranted. Having a more updated central tendency and variance will help with the model predictions.  
+
+* Being able to model the areas (BTB demarcations) with probabilities will help when applying final integrated calls to the Bayesian network framework.    
+
+## Intro  
+
+This is a dive into the derivation of the bull trout baseline (BTB) sediment indicator. This analysis focuses on comparing road specific sediment delivery by area to specific area background erosion rates (all based on kg/km<sup>2</sup>/yr) to get a proportion of road to natural erosion. We built uncertainty into the model from multiple distributions (roads and background) stratified by parent geologic material (granitic and sedimentary). In addition, we use a Bayesian regression model to sample from the posterior to get a probabilistic distribution.  
+
+### Steps  
+
+1. **Build Uncertainty *into* the model**  
+
+We might be inclined to just take an average background erosion rate (mean in Figure 1 below) and modeled GRAIP-Lite value and calculate the estimated proportion. In our case we want the distribution to be the estimate! 
