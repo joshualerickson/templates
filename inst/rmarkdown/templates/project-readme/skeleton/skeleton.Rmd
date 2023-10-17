@@ -1,0 +1,30 @@
+---
+params:
+  author:
+    label: "Author: "
+    value: "Josh Erickson"
+    input: text
+  title:
+    label: "Title: "
+    value: "R1 - Soils, Water, and Fisheries Project README"
+    input: text
+output: 
+  html_document:
+    css: 'cayman.css'
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(dev.args = list(png = list(type = "cairo")))
+```
+<p id="logo"><img src="www/images/usda_usfs.png"></p>  
+<span style="color:#005838">Northern Region | Renewable Resource Management</span>
+
+# `r params$title`  
+##### by `r params$author`  
+
+### Overview    
+
+Project descriptions within this folder.  
+
+### bt_deck_haul_progammatic_2023  
+
+This folder contains the GIS work done on the **_Programmatic Biological Assessment for Removing Fire Suppression’s Log Decks from National Forests in the Northern Region, USDA Forest Service_**. 
